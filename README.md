@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# ✋ Welcome to the Palmistry App 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a [React Native](https://reactnative.dev) app powered by [Expo](https://expo.dev), created using [`create-expo-app`](https://www.npmjs.com/package/create-expo-app) and structured with [`expo-router`](https://expo.github.io/router/).
 
-## Get started
+---
 
-1. Install dependencies
+## 📲 Get started
+
+1. **Install dependencies**
 
    ```bash
    npm install
-   ```
+Start the app
 
-2. Start the app
+bash
+Copy
+Edit
+npx expo start
+In the output, you'll find options to open the app in a:
 
-   ```bash
-   npx expo start
-   ```
+development build
 
-In the output, you'll find options to open the app in a
+Android emulator
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+iOS simulator
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Expo Go
 
-## Get a fresh project
+📂 Current Structure
+This project uses expo-router for file-based navigation. Key files live inside the /app directory.
 
-When you're ready, run:
+pgsql
+Copy
+Edit
+Palmistry/
+├── app/
+│   ├── index.tsx              # Landing screen
+│   ├── _layout.tsx            # Global layout: fonts, background
+│   └── screens/
+│       ├── sign-in.tsx
+│       ├── sign-up.tsx
+│       ├── image-picker.tsx
+│       └── reading.tsx
+├── components/
+│   ├── Header.tsx             # Shared logo + back button
+│   ├── BackgroundWrapper.tsx  # Optional custom background
+│   └── ScreenWrapper.tsx      # Optional layout wrapper
+├── assets/
+│   ├── fonts/
+│   │   ├── CinzelDecorative-Regular.ttf
+│   │   └── Lora-Regular.ttf
+│   └── images/
+│       ├── palmistry_logo.png
+│       ├── background.jpg
+│       └── sample-palm.jpg
+├── hooks/
+│   ├── useAppAssets.ts        # Preloads fonts + images
+│   └── useCustomFonts.ts      # Optional manual font loading
+🛠 Get a fresh project
+Run the following to reset and generate a clean /app directory (if needed):
 
-```bash
+bash
+Copy
+Edit
 npm run reset-project
-```
+✨ Features Implemented
+Custom font loading with expo-font
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Global background image managed in _layout.tsx
 
-## Learn more
+Palm image picker (via gallery or camera)
 
-To learn more about developing your project with Expo, look at the following resources:
+Dummy palm reading screen using uploaded image
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Simple onboarding: Sign-in and Sign-up (no backend yet)
 
-## Join the community
+🚀 Planned Features
+🔐 Connect Sign-in/Sign-up to backend or Firebase
 
-Join our community of developers creating universal apps.
+🤖 Send palm image to GPT-4 Vision API
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+🖼️ Display real user image and reading in reading.tsx
+
+📜 Store reading history (optional)
+
+📚 Learn more
+To explore more about developing with Expo:
+
+Expo Docs
+
+expo-router Overview
+
+Expo Font Loading
+
+Expo Image Picker
+
+💬 Join the community
+Expo GitHub
+
+Expo Discord
+
+👤 Author
+Built by @Shuaibu-oluwatunmise
