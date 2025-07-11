@@ -1,50 +1,49 @@
-# ✋ Welcome to the Palmistry App 👋
+# ✋ Palmistry App
 
-This is a [React Native](https://reactnative.dev) app powered by [Expo](https://expo.dev), created using [`create-expo-app`](https://www.npmjs.com/package/create-expo-app) and structured with [`expo-router`](https://expo.github.io/router/).
+A palm reading mobile app built with **React Native** using **Expo** and **expo-router**.  
+Users can sign up, upload a palm image (from camera or gallery), and receive a dummy palm reading.
 
 ---
 
-## 📲 Get started
+## 🚀 Getting Started
 
-1. **Install dependencies**
+### 1. Clone the Repo
 
-   ```bash
-   npm install
-Start the app
+```bash
+git clone https://github.com/Shuaibu-oluwatunmise/Palmistry.git
+cd Palmistry
+````
 
-bash
-Copy
-Edit
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the App
+
+```bash
 npx expo start
-In the output, you'll find options to open the app in a:
+```
 
-development build
+---
 
-Android emulator
+## 📁 Folder Structure
 
-iOS simulator
-
-Expo Go
-
-📂 Current Structure
-This project uses expo-router for file-based navigation. Key files live inside the /app directory.
-
-pgsql
-Copy
-Edit
+```
 Palmistry/
 ├── app/
-│   ├── index.tsx              # Landing screen
-│   ├── _layout.tsx            # Global layout: fonts, background
+│   ├── index.tsx              # Landing Screen
+│   ├── _layout.tsx            # Global layout with fonts + background
 │   └── screens/
 │       ├── sign-in.tsx
 │       ├── sign-up.tsx
 │       ├── image-picker.tsx
 │       └── reading.tsx
 ├── components/
-│   ├── Header.tsx             # Shared logo + back button
-│   ├── BackgroundWrapper.tsx  # Optional custom background
-│   └── ScreenWrapper.tsx      # Optional layout wrapper
+│   ├── Header.tsx
+│   ├── BackgroundWrapper.tsx (optional)
+│   └── ScreenWrapper.tsx (optional)
 ├── assets/
 │   ├── fonts/
 │   │   ├── CinzelDecorative-Regular.ttf
@@ -54,50 +53,53 @@ Palmistry/
 │       ├── background.jpg
 │       └── sample-palm.jpg
 ├── hooks/
-│   ├── useAppAssets.ts        # Preloads fonts + images
-│   └── useCustomFonts.ts      # Optional manual font loading
-🛠 Get a fresh project
-Run the following to reset and generate a clean /app directory (if needed):
+│   ├── useAppAssets.ts
+│   └── useCustomFonts.ts
+```
 
-bash
-Copy
-Edit
-npm run reset-project
-✨ Features Implemented
-Custom font loading with expo-font
+---
 
-Global background image managed in _layout.tsx
+## ✅ Features Implemented
 
-Palm image picker (via gallery or camera)
+* ✨ Navigation via `expo-router`
+* ✨ Global background & font loading via layout
+* ✨ Palm image selection (gallery & camera)
+* ✨ Reusable `Header` with logo and back button
+* ✨ Dummy palm reading screen (to be replaced with API)
+* ✨ Styled UI with custom fonts (`CinzelDecorative`, `Lora`)
 
-Dummy palm reading screen using uploaded image
+---
 
-Simple onboarding: Sign-in and Sign-up (no backend yet)
+## 🔜 Features To Be Added
 
-🚀 Planned Features
-🔐 Connect Sign-in/Sign-up to backend or Firebase
+* 🔐 User authentication backend (e.g. Firebase)
+* 🧠 GPT-4 Vision API integration for palm analysis
+* 📤 Image upload to backend
+* 💾 Store palm readings locally or in cloud
+* 🧪 Replace dummy data in `reading.tsx` with real data
 
-🤖 Send palm image to GPT-4 Vision API
+---
 
-🖼️ Display real user image and reading in reading.tsx
+## 🧠 Tech Stack
 
-📜 Store reading history (optional)
+* [Expo](https://expo.dev/)
+* [React Native](https://reactnative.dev/)
+* [expo-router](https://expo.github.io/router/)
+* [Expo Image Picker](https://docs.expo.dev/versions/latest/sdk/imagepicker/)
+* [expo-font](https://docs.expo.dev/versions/latest/sdk/font/)
 
-📚 Learn more
-To explore more about developing with Expo:
+---
 
-Expo Docs
+## 👤 Developer
 
-expo-router Overview
+**GitHub:** [@Shuaibu-oluwatunmise](https://github.com/Shuaibu-oluwatunmise)
 
-Expo Font Loading
+---
 
-Expo Image Picker
+## 💬 Community
 
-💬 Join the community
-Expo GitHub
+* [Expo GitHub](https://github.com/expo/expo)
+* [Expo Discord](https://chat.expo.dev)
 
-Expo Discord
 
-👤 Author
-Built by @Shuaibu-oluwatunmise
+
