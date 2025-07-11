@@ -1,29 +1,43 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
+// app/_layout.tsx
+import { Stack, useSegments, useNavigationContainerRef, useGlobalSearchParams, Slot } from 'expo-router';
+import { SplashScreen } from 'expo-router';
+import { useEffect } from 'react';
+import { useAppAssets } from '../hooks/useAppAssets';
+import { ImageBackground, StyleSheet, View } from 'react-native';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+  const assetsLoaded = useAppAssets();
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+  useEffect(() => {
+    if (assetsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [assetsLoaded]);
+
+  if (!assetsLoaded) return null;
+
+  // Global default background image
+  const background = require('../assets/images/forest-simon-l-kLSg1mIMA-unsplash.jpg');
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <ImageBackground
+      source={background}
+      style={styles.bg}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay}>
+        <Slot />
+      </View>
+    </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  bg: {
+    flex: 1,
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+  },
+});
